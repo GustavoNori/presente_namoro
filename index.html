@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Três Meses, Meu Amor! ❤️</title>
+    <title>Para Nicoly, com todo meu amor ❤️</title>
     <style>
         /* Importando fontes do Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:ital,wght@0,400;1,300&family=Playfair+Display:wght@400;700&display=swap');
         
         /* Reset e configurações gerais */
         * {
@@ -16,8 +16,10 @@
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 25%, #7e22ce 50%, #be185d 75%, #dc2626 100%);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -28,116 +30,202 @@
             padding: 40px 20px;
         }
         
-        /* Animação de corações flutuantes no fundo */
-        .heart {
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Estrelas piscantes no fundo */
+        .star {
             position: absolute;
-            bottom: -50px;
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.3);
-            animation: float-up 10s infinite ease-in;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
             pointer-events: none;
         }
         
-        @keyframes float-up {
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        /* Pétalas de rosa caindo */
+        .petal {
+            position: absolute;
+            top: -50px;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 182, 193, 0.7);
+            border-radius: 50% 0;
+            animation: fall 12s infinite linear;
+            pointer-events: none;
+        }
+        
+        @keyframes fall {
             0% {
-                bottom: -50px;
-                opacity: 0;
-                transform: translateX(0) rotate(0deg);
-            }
-            10% {
+                top: -50px;
                 opacity: 1;
-            }
-            90% {
-                opacity: 1;
+                transform: rotate(0deg);
             }
             100% {
-                bottom: 110vh;
+                top: 110vh;
                 opacity: 0;
-                transform: translateX(100px) rotate(360deg);
+                transform: rotate(720deg);
             }
         }
         
-        /* Container principal */
+        /* Container principal com efeito de vidro fosco */
         .container {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 60px 40px;
-            border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 700px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 70px 50px;
+            border-radius: 40px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            max-width: 800px;
             width: 90%;
             text-align: center;
             position: relative;
             z-index: 1;
-            animation: fade-in 1s ease-in;
+            animation: float-in 1.5s ease-out;
             margin: auto;
         }
         
-        @keyframes fade-in {
+        @keyframes float-in {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-50px) scale(0.9);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
+        }
+        
+        /* Frase de abertura */
+        .opening-line {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            color: rgba(255, 255, 255, 0.95);
+            font-style: italic;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fade-in-text 2s ease-in;
+        }
+        
+        @keyframes fade-in-text {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         /* Título principal com fonte cursiva */
         h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3.5em;
-            color: #c53364;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            animation: pulse 2s infinite;
+            font-family: 'Dancing Script', cursive;
+            font-size: 4em;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 105, 180, 0.5);
+            animation: glow-pulse 3s infinite, title-entrance 2s ease-out;
         }
         
-        @keyframes pulse {
+        @keyframes glow-pulse {
             0%, 100% {
-                transform: scale(1);
+                text-shadow: 0 0 20px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 105, 180, 0.5);
             }
             50% {
-                transform: scale(1.05);
+                text-shadow: 0 0 30px rgba(255, 105, 180, 1), 0 0 60px rgba(255, 105, 180, 0.8);
             }
         }
         
-        /* Contador de tempo */
+        @keyframes title-entrance {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Separador decorativo */
+        .divider {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            margin: 30px auto;
+            position: relative;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: '✦';
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2em;
+            top: -10px;
+        }
+        
+        .divider::before { left: -15px; }
+        .divider::after { right: -15px; }
+        
+        /* Contador de tempo com design luxuoso */
         .timer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgba(190, 24, 93, 0.3), rgba(126, 34, 206, 0.3));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin: 30px 0;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 25px;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: timer-glow 4s infinite;
+        }
+        
+        @keyframes timer-glow {
+            0%, 100% {
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 15px 45px rgba(190, 24, 93, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            }
         }
         
         .timer h2 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            font-weight: 300;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
         
         .time-display {
-            font-size: 2em;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.3em;
             font-weight: 400;
             letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
         /* Texto romântico com efeito de digitação */
         .romantic-text {
-            font-size: 1.2em;
-            line-height: 1.8;
-            color: #333;
-            margin-top: 30px;
-            text-align: left;
-            padding: 0 20px;
+            font-size: 1.35em;
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 40px;
+            text-align: justify;
+            padding: 0 30px;
+            font-style: italic;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
         }
         
         .romantic-text::after {
             content: '|';
             animation: blink 0.7s infinite;
-            margin-left: 2px;
+            margin-left: 3px;
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .romantic-text.finished::after {
@@ -146,94 +234,147 @@
         }
         
         @keyframes blink {
-            0%, 50% {
-                opacity: 1;
-            }
-            51%, 100% {
-                opacity: 0;
-            }
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
         }
         
-        /* Decoração de corações */
-        .heart-decoration {
-            font-size: 3em;
-            margin: 20px 0;
-            animation: heartbeat 1.5s infinite;
+        /* Assinatura final */
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 40px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: signature-appear 1s ease-in 8s forwards;
         }
         
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            25% {
-                transform: scale(1.2);
-            }
-            50% {
-                transform: scale(1);
-            }
+        @keyframes signature-appear {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+        
+        /* Decoração de corações flutuantes */
+        .floating-hearts {
+            position: absolute;
+            font-size: 2em;
+            animation: float-heart 6s infinite ease-in-out;
+            opacity: 0.4;
+        }
+        
+        @keyframes float-heart {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+        
+        .heart-top-left { top: 20px; left: 20px; animation-delay: 0s; }
+        .heart-top-right { top: 20px; right: 20px; animation-delay: 2s; }
+        .heart-bottom-left { bottom: 20px; left: 20px; animation-delay: 4s; }
+        .heart-bottom-right { bottom: 20px; right: 20px; animation-delay: 1s; }
         
         /* Responsividade */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5em;
+                font-size: 2.8em;
+            }
+            
+            .opening-line {
+                font-size: 1.1em;
             }
             
             .container {
-                padding: 40px 25px;
+                padding: 50px 30px;
             }
             
             .romantic-text {
-                font-size: 1em;
+                font-size: 1.1em;
+                padding: 0 15px;
+                line-height: 1.8;
             }
             
             .time-display {
+                font-size: 1.8em;
+            }
+            
+            .signature {
+                font-size: 1.5em;
+            }
+            
+            .floating-hearts {
                 font-size: 1.5em;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Corações flutuantes animados no fundo -->
-    <div id="hearts-container"></div>
+    <!-- Estrelas piscantes -->
+    <div id="stars-container"></div>
+    
+    <!-- Pétalas caindo -->
+    <div id="petals-container"></div>
     
     <!-- Container principal -->
     <div class="container">
-        <h1>Nicoly, meu amor, feliz três meses! ❤️</h1>
+        <!-- Corações decorativos flutuantes -->
+        <div class="floating-hearts heart-top-left">💕</div>
+        <div class="floating-hearts heart-top-right">💖</div>
+        <div class="floating-hearts heart-bottom-left">💗</div>
+        <div class="floating-hearts heart-bottom-right">💝</div>
         
-        <div class="heart-decoration">💕</div>
+        <p class="opening-line">"Há momentos na vida que valem uma eternidade..."</p>
+        
+        <h1>Nicoly, meu amor,<br>feliz três meses! ❤️</h1>
+        
+        <div class="divider"></div>
         
         <!-- Contador de tempo juntos -->
         <div class="timer">
-            <h2>Tempo juntos:</h2>
+            <h2>Nosso Tempo Juntos</h2>
             <div class="time-display" id="timeDisplay">Calculando...</div>
         </div>
         
         <!-- Texto romântico com efeito de máquina de escrever -->
         <div class="romantic-text" id="romanticText"></div>
+        
+        <div class="signature" id="signature">Com todo meu amor, sempre 💕</div>
     </div>
     
     <script>
         // ===== CONFIGURAÇÃO =====
-        const START_DATE = new Date('2025-07-07T00:00:00'); // Data do início do relacionamento
+        const START_DATE = new Date('2025-07-07T00:00:00');
         
         // Texto romântico a ser digitado
-        const ROMANTIC_MESSAGE = `Amor, desde que você entrou na minha vida, tudo ganhou um novo sentido. Três meses que parecem ter passado voando, mas ao mesmo tempo sinto como se te conhecesse há muito mais tempo. Você me conquistou com seu jeito único de ser, com seu sorriso que ilumina até os meus dias mais difíceis, e com seu carinho que me faz sentir a pessoa mais sortuda do mundo. Cada momento ao seu lado é especial, cada risada compartilhada é um tesouro que guardo no coração. Obrigado por ser essa pessoa incrível, por me apoiar, por me fazer rir e por tornar minha vida muito mais feliz. Esses três meses são apenas o começo da nossa história, e mal posso esperar por todos os momentos que ainda vamos viver juntos. Te amo mais a cada dia, Amor! 💖`;
+        const ROMANTIC_MESSAGE = `Nicoly, amor da minha vida... Quando penso em nós, meu coração se enche de uma felicidade que mal consigo descrever. São três meses que parecem ter passado como um sopro, mas ao mesmo tempo, cada segundo ao seu lado tem um gosto de eternidade. Você chegou na minha vida como uma surpresa do destino, iluminando meus dias com seu sorriso encantador e aquele jeito único que só você tem. Cada conversa, cada riso compartilhado, cada olhar... tudo isso construiu algo tão especial que eu nem imaginava ser possível. Você me faz querer ser alguém melhor, me inspira, me completa. Nos seus braços encontro meu lar, nos seus olhos vejo meu futuro, e no seu coração encontrei o amor mais puro e verdadeiro que eu poderia sonhar. Obrigado por existir, por me escolher, por fazer parte da minha história. Que esses três meses sejam apenas o começo de uma jornada linda, repleta de amor, cumplicidade, risadas e sonhos compartilhados. Te amo mais do que todas as estrelas do céu, mais do que todas as palavras podem expressar. Você é, e sempre será, meu maior presente.`;
         
-        // ===== FUNÇÃO: CRIAR CORAÇÕES FLUTUANTES =====
-        function createFloatingHearts() {
-            const heartsContainer = document.getElementById('hearts-container');
-            const heartSymbols = ['❤️', '💕', '💖', '💗', '💓', '💝'];
+        // ===== FUNÇÃO: CRIAR ESTRELAS PISCANTES =====
+        function createStars() {
+            const starsContainer = document.getElementById('stars-container');
             
-            // Criar 15 corações com posições e delays aleatórios
-            for (let i = 0; i < 15; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'heart';
-                heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
-                heart.style.left = Math.random() * 100 + '%';
-                heart.style.animationDelay = Math.random() * 10 + 's';
-                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
-                heartsContainer.appendChild(heart);
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = (Math.random() * 3 + 1) + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // ===== FUNÇÃO: CRIAR PÉTALAS CAINDO =====
+        function createPetals() {
+            const petalsContainer = document.getElementById('petals-container');
+            
+            for (let i = 0; i < 20; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDelay = Math.random() * 12 + 's';
+                petal.style.animationDuration = (Math.random() * 5 + 10) + 's';
+                petal.style.opacity = Math.random() * 0.5 + 0.3;
+                petalsContainer.appendChild(petal);
             }
         }
         
@@ -242,13 +383,11 @@
             const now = new Date();
             const diff = now - START_DATE;
             
-            // Calcular diferença em dias, horas, minutos e segundos
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
             
-            // Atualizar display
             const timeDisplay = document.getElementById('timeDisplay');
             timeDisplay.textContent = `${days} dias, ${hours}h ${minutes}m ${seconds}s`;
         }
@@ -264,27 +403,23 @@
                     index++;
                     setTimeout(type, speed);
                 } else {
-                    // Remover cursor piscante quando terminar
                     element.classList.add('finished');
                 }
             }
             
-            // Iniciar digitação após 1 segundo
-            setTimeout(type, 1000);
+            setTimeout(type, 2000);
         }
         
         // ===== INICIALIZAÇÃO =====
         document.addEventListener('DOMContentLoaded', function() {
-            // Criar corações flutuantes
-            createFloatingHearts();
+            createStars();
+            createPetals();
             
-            // Iniciar contador de tempo e atualizar a cada segundo
             updateTimer();
             setInterval(updateTimer, 1000);
             
-            // Iniciar efeito de máquina de escrever no texto romântico
             const romanticTextElement = document.getElementById('romanticText');
-            typewriterEffect(ROMANTIC_MESSAGE, romanticTextElement, 40);
+            typewriterEffect(ROMANTIC_MESSAGE, romanticTextElement, 35);
         });
     </script>
 </body>
